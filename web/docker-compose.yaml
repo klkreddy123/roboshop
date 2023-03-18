@@ -34,3 +34,8 @@ services:
     depends_on:
       - redis
       - catalogue
+  shipping:
+    image: shipping:v1
+    container_name: shipping
+    depends_on:
+      - 
