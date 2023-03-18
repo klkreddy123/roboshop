@@ -1,8 +1,8 @@
 version: "3.9"
-services:
 networks:
   roboshop:
     driver: bridge
+services:
   web:
     image: web:v1
     container_name: web
