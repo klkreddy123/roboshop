@@ -10,9 +10,9 @@ services:
       - "80:80"
     depends_on:
       - catalogue
-  #     - user
+      - user
   #     - cart
-  #     - mysql
+      - mysql
   #     - shipping
   mongodb:
     image: mongodb:v1
@@ -22,23 +22,23 @@ services:
     container_name: catalogue
     depends_on:
       - mongodb
-  # redis:
-  #   image: redis
-  # user:
-  #   image: user:v1
-  #   container_name: user
-  #   depends_on:
-  #     - mongodb
-  #     - redis
+  redis:
+    image: redis
+  user:
+    image: user:v1
+    container_name: user
+    depends_on:
+      - mongodb
+      - redis
   # cart:
   #   image: cart:v1
   #   container_name: cart
   #   depends_on:
   #     - redis
   #     - catalogue
-  # mysql:
-  #   image: mysql:v1
-  #   container_name: mysql
+  mysql:
+    image: mysql:v1
+    container_name: mysql
   # shipping:
   #   image: shipping:v1
   #   container_name: shipping
