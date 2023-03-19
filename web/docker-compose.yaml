@@ -34,3 +34,9 @@ services:
       - mongodb
       - redis
       - mysql
+  cart:
+    image: cart:v1
+    container_name: cart
+    depends_on:
+      - redis
+      - catalogue
